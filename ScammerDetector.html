@@ -11993,6 +11993,43 @@ div#notebook {
 </div>
 
   </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">filepath</span><span class="o">=</span><span class="n">fpath</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">fname</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s2">&quot;.csv&quot;</span>
+<span class="n">filepath</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;\\.csv&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Example: <em>MyCar</em></p>
@@ -12010,53 +12047,19 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-
+<span class="c1">#import dataframe</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span> <span class="k">as</span> <span class="nn">req</span>
 <span class="c1">#calling package URL lib</span>
 <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlopen</span> <span class="k">as</span> <span class="n">uReq</span>
 <span class="c1">#pase HTML text</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">soup</span>
 
-<span class="c1">#my_url = &#39;https://www.mudah.my/malaysia/cars-for-sale&#39;</span>
 
+<span class="c1">#filename = &quot;df_mulpages.csv&quot;</span>
+<span class="c1">#filename = filepath</span>
 <span class="k">def</span> <span class="nf">scrapme</span><span class="p">(</span><span class="n">meurl</span><span class="p">):</span>
-    <span class="n">my_url</span> <span class="o">=</span> <span class="n">meurl</span>
-    <span class="c1">#opening up the connnection, grabbing the page</span>
-    <span class="n">uClient</span> <span class="o">=</span> <span class="n">uReq</span><span class="p">(</span><span class="n">my_url</span><span class="p">)</span>
-    <span class="n">page_html</span> <span class="o">=</span> <span class="n">uClient</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">uClient</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="c1">#html parsing  </span>
-    <span class="n">page_soup</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">page_html</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
-
-    <span class="n">containers</span> <span class="o">=</span> <span class="n">page_soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;listing_params_container&quot;</span><span class="p">})</span>
-    
-    <span class="n">filename</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\LENOVO\Documents\fyp fathiah\Program\Interface\ScrapMe.csv&quot;</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-
-    <span class="n">headers</span> <span class="o">=</span> <span class="s2">&quot;Name, Price, Manufactured Year, Mileage, NewMil, CC, Condition, Link&quot;</span>
-
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">fathiah</span> <span class="ow">in</span> <span class="n">containers</span><span class="p">:</span>
-        <span class="n">clink</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">price</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;ads_price&quot;</span><span class="p">})</span>
-        <span class="n">Price</span> <span class="o">=</span> <span class="n">price</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">year</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;icon_label&quot;</span><span class="p">})</span>
-        <span class="n">Year</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">Mileage</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">CC</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">Condition</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="c1">#print(&quot;Name: &quot; + name)</span>
-        <span class="c1">#print(&quot;Price: &quot; + Price)</span>
-        <span class="c1">#print(&quot;Manufactured Year: &quot; + Year)</span>
-        <span class="c1">#print(&quot;Mileage :&quot; + Mileage)</span>
-        <span class="c1">#print(&quot;CC :&quot; + CC)</span>
-        <span class="c1">#print(&quot;Condition: &quot; + Condition)</span>
-        <span class="c1">#print(&quot;Link: &quot; + clink)</span>
-
-
-        <span class="k">def</span> <span class="nf">subs</span> <span class="p">(</span><span class="n">Mileage</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">subs</span> <span class="p">(</span><span class="n">Mileage</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;0 - 4 999&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;0 - 4 999&quot;</span><span class="p">,</span> <span class="s2">&quot;2500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;5 000 - 9 999&quot;</span><span class="p">:</span>
@@ -12072,7 +12075,7 @@ div#notebook {
             <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;30 000 - 34 999&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;30 000 - 34 999&quot;</span><span class="p">,</span> <span class="s2">&quot;32500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;35 000 - 39 999&quot;</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;25 000 - 29 999&quot;</span><span class="p">,</span> <span class="s2">&quot;37500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;35 000 - 39 999&quot;</span><span class="p">,</span> <span class="s2">&quot;37500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;40 000 - 44 999&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;40 000 - 44 999&quot;</span><span class="p">,</span> <span class="s2">&quot;42500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;45 000 - 49 999&quot;</span><span class="p">:</span>
@@ -12133,12 +12136,65 @@ div#notebook {
                 <span class="k">return</span> <span class="n">Mileage</span>
 
 
+    <span class="c1">#df = pd.DataFrame(data, columns=[&#39;Name&#39;, &#39;Price&#39;, &#39;Manufactured Year&#39;, &#39;Mileage&#39;, &#39;NewMil&#39;, &#39;CC&#39;, &#39;Condition&#39;, &#39;Link&#39;])</span>
 
-        <span class="n">newMil</span> <span class="o">=</span> <span class="n">subs</span><span class="p">(</span><span class="n">Mileage</span><span class="p">)</span>
 
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">Price</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;RM&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">Year</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">Mileage</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">newMil</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">CC</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">Condition</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">clink</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">dprice</span> <span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">a</span>
+    <span class="n">container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">my_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.mudah.my/malaysia/cars-for-sale?o=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;1&amp;q=&amp;th=1&#39;</span>
+        <span class="n">pages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_url</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">pages</span><span class="p">:</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">page_soup</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="n">containers</span> <span class="o">=</span> <span class="n">page_soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;listing_params_container&quot;</span><span class="p">})</span>
+
+
+        <span class="k">for</span> <span class="n">fathiah</span> <span class="ow">in</span> <span class="n">containers</span><span class="p">:</span>
+
+            <span class="n">clink</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">price</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;ads_price&quot;</span><span class="p">})</span>
+            <span class="n">Price</span> <span class="o">=</span> <span class="n">price</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;icon_label&quot;</span><span class="p">})</span>
+            <span class="n">Year</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">Mileage</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">CC</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">Condition</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="n">newMil</span> <span class="o">=</span> <span class="n">subs</span><span class="p">(</span><span class="n">Mileage</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">Price1</span> <span class="o">=</span> <span class="n">Price</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;RM&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">nPrice</span> <span class="o">=</span> <span class="n">dprice</span><span class="p">(</span><span class="n">Price1</span><span class="p">)</span>
+            <span class="n">container</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">nPrice</span><span class="p">,</span> <span class="n">Year</span><span class="p">,</span> <span class="n">Mileage</span><span class="p">,</span> <span class="n">newMil</span><span class="p">,</span> <span class="n">CC</span><span class="p">,</span> <span class="n">Condition</span><span class="p">,</span> <span class="n">clink</span><span class="p">))</span>
+
+
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">])</span>
+    <span class="c1">#df.to_csv(filename, index=False, encoding=&#39;utf-8&#39;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df.head()</span>
 </pre></div>
 
     </div>
@@ -12164,7 +12220,7 @@ div#notebook {
       <span class="k">with</span> <span class="n">oscrap</span><span class="p">:</span>
           <span class="c1"># what happens when we press the button</span>
           <span class="n">clear_output</span><span class="p">()</span>
-          <span class="n">scrapme</span><span class="p">(</span><span class="n">meurl</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+          <span class="n">scrapme</span><span class="p">(</span><span class="n">meurl</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
           <span class="c1">#plt.plot(X, y)</span>
           <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Me Scrapped!&#39;</span><span class="p">)</span>
 <span class="c1"># linking button and function together using a button&#39;s method</span>
