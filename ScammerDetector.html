@@ -12882,6 +12882,74 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">):</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="p">]</span>
+    <span class="n">mylayout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;2 Component PCA: &#39;</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 1&#39;</span><span class="p">),</span> <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 2&#39;</span><span class="p">),</span> <span class="n">hovermode</span> <span class="o">=</span> <span class="s1">&#39;closest&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">fig_comp</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">mylayout</span><span class="p">)</span>
+    <span class="c1">#iplot(fig_comp)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">fig_comp</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
+<span class="n">pca_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+      <span class="k">with</span> <span class="n">pca_output</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+          <span class="n">clear_output</span><span class="p">()</span>
+          <span class="n">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">)</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
+<span class="c1"># linking button and function together using a button&#39;s method</span>
+<span class="n">pcabtn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strcol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">]</span>
 <span class="n">datacol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">datacol</span><span class="p">]</span>
@@ -14172,7 +14240,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">accordion3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Accordion</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_pca</span><span class="p">,</span><span class="n">pcabtn</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_box</span><span class="p">,</span> <span class="n">analysisbtn</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_result</span><span class="p">,</span> <span class="n">scambtn</span><span class="p">])])</span>
+<span class="n">accordion3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Accordion</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_pca</span><span class="p">,</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">pca_output</span><span class="p">,</span> <span class="n">pcabtn</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_box</span><span class="p">,</span> <span class="n">analysisbtn</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_result</span><span class="p">,</span> <span class="n">scambtn</span><span class="p">])])</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Method&#39;</span><span class="p">)</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Analysis&#39;</span><span class="p">)</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Result&#39;</span><span class="p">)</span>
