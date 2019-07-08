@@ -11816,6 +11816,12 @@ div#notebook {
 
 
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Importing">Importing<a class="anchor-link" href="#Importing">&#182;</a></h2>
+</div>
+</div>
+</div>
 
   
 
@@ -11840,6 +11846,18 @@ div#notebook {
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Widgets-&amp;-Method-Definition">Widgets &amp; Method Definition<a class="anchor-link" href="#Widgets-&amp;-Method-Definition">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Header">Header<a class="anchor-link" href="#Header">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -12005,6 +12023,12 @@ div#notebook {
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Extraction:-Scrap-and-Save">Extraction: Scrap and Save<a class="anchor-link" href="#Extraction:-Scrap-and-Save">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -12169,54 +12193,17 @@ div#notebook {
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_csvname</span> <span class="o">=</span> <span class="n">fname</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span>
-<span class="n">save_folderpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">csvname</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-16-098e3ad2ea47&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      1</span> save_csvname <span class="ansi-yellow-intense-fg ansi-bold">=</span> fname<span class="ansi-yellow-intense-fg ansi-bold">.</span>value <span class="ansi-yellow-intense-fg ansi-bold">+</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;.csv&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>save_folderpath <span class="ansi-yellow-intense-fg ansi-bold">=</span> os<span class="ansi-yellow-intense-fg ansi-bold">.</span>path<span class="ansi-yellow-intense-fg ansi-bold">.</span>join<span class="ansi-yellow-intense-fg ansi-bold">(</span>fpath<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">,</span> csvname<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;csvname&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_folderpath</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">car</span><span class="p">):</span>
+    <span class="n">car_param</span> <span class="o">=</span> <span class="n">car</span>
+    <span class="n">car_param</span> <span class="o">=</span> <span class="n">car_param</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;?&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">car_param</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -12234,13 +12221,15 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">lpath</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Upload cleaned dataset&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Folder Path:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-<span class="c1">#lpath</span>
+<span class="k">def</span> <span class="nf">location</span><span class="p">(</span><span class="n">location</span><span class="p">):</span>
+    <span class="n">location_param</span> <span class="o">=</span> <span class="n">location</span>
+    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">location_param</span><span class="p">:</span>
+        <span class="n">location_param</span> <span class="o">=</span> <span class="n">location_param</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">location_param</span> <span class="o">=</span> <span class="n">location_param</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">location_param</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -12258,1289 +12247,10 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">lname</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Name of cleaned csv file&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;CSV file:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-<span class="c1">#lname</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_csvname</span> <span class="o">=</span> <span class="n">fname</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span>
-<span class="n">clean_folderpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">csvname</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_folderpath</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_link</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;i&gt;&lt;b&gt;https://www.mudah.my/malaysia/cars-for-sale?o=1&amp;q=&amp;th=1&lt;/b&gt;&lt;i&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample Link:&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_link</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_folder</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;i&gt;&lt;b&gt;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">LENOVO</span><span class="se">\\</span><span class="s2">Documents&lt;/b&gt;&lt;i&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample Path:&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_folder</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_csv</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;i&gt;&lt;b&gt;kereta&lt;/b&gt;&lt;i&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample CSV:&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_csv</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_view</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Choose how to view your data&lt;/b&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">viewlist_</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">]</span>
-<span class="n">view_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="n">viewlist_</span><span class="p">,</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">viewlist_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Num Rows:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#view_dropdown</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">view_by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Head&#39;</span><span class="p">,</span> <span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="s1">&#39;Tail&#39;</span><span class="p">]</span>
-<span class="n">viewby_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="n">view_by</span><span class="p">,</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;By:&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#viewby_dropdown</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">viewby_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="c1">#style=ButtonStyle(button_color=&#39;blue&#39;),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;View&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;info&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click Me&#39;</span><span class="p">,</span>
-    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="p">)</span>
-<span class="c1">#viewby_btn</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#import cleaned datafile</span>
-<span class="c1"># C:\Users\LENOVO\Documents\fyp fathiah\Program\Test Case\dataset</span>
-<span class="k">def</span> <span class="nf">import_df</span><span class="p">():</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\LENOVO\Documents\fyp fathiah\Program\Test Case\dataset&quot;</span><span class="p">)</span>
-    <span class="n">missing_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;n/a&quot;</span><span class="p">,</span> <span class="s2">&quot;na&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">]</span>
-    <span class="c1">#filepath_or_buffer = &quot;ToyotaVios KL &amp; SELANGORNUMCOL.csv&quot;</span>
-    <span class="n">filepath_or_buffer</span> <span class="o">=</span> <span class="s2">&quot;HondaAccord KL &amp; SELANGOR.csv&quot;</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">na_values</span> <span class="o">=</span> <span class="n">missing_values</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Manufactured Year</th>
-      <th>Mileage</th>
-      <th>NewMil</th>
-      <th>CC</th>
-      <th>Condition</th>
-      <th>Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2000 Honda Accord 20cc (M)</td>
-      <td>5500.0</td>
-      <td>2000.0</td>
-      <td>35 000 - 39 999</td>
-      <td>37500.0</td>
-      <td>20 cc</td>
-      <td>Used</td>
-      <td>https://www.mudah.my/2000+Honda+Accord+20cc+M+...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1996 Honda Accord 2.0 (M)</td>
-      <td>9000.0</td>
-      <td>1996.0</td>
-      <td>5 000 - 9 999</td>
-      <td>52500.0</td>
-      <td>1997 cc</td>
-      <td>Used</td>
-      <td>https://www.mudah.my/1996+Honda+Accord+2+0+M+-...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2012 Honda Accord 2.0 (A) Reg. 2013 VTi-L Full...</td>
-      <td>49700.0</td>
-      <td>2012.0</td>
-      <td>80 000 - 84 999</td>
-      <td>82500.0</td>
-      <td>1997 cc</td>
-      <td>Used</td>
-      <td>https://www.mudah.my/2012+Honda+Accord+2+0+A+R...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2015 Honda Accord 2.0 (A)</td>
-      <td>93000.0</td>
-      <td>2015.0</td>
-      <td>15 000 - 19 999</td>
-      <td>17500.0</td>
-      <td>2000 cc</td>
-      <td>Used</td>
-      <td>https://www.mudah.my/2015+Honda+Accord+2+0+A+-...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1997 Honda Accord 1.6 (M)</td>
-      <td>1700.0</td>
-      <td>1997.0</td>
-      <td>130 000 - 139 999</td>
-      <td>135000.0</td>
-      <td>1600 cc</td>
-      <td>Used</td>
-      <td>https://www.mudah.my/1997+Honda+Accord+1+6+M+-...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">()</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
-<span class="n">view_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
-      <span class="c1"># &quot;linking function with output&quot;</span>
-      <span class="k">with</span> <span class="n">view_output</span><span class="p">:</span>
-          <span class="c1"># what happens when we press the button</span>
-          <span class="n">clear_output</span><span class="p">()</span>
-          <span class="n">view</span><span class="p">(</span><span class="n">viewby_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">view_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
-          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
-<span class="c1"># linking button and function together using a button&#39;s method</span>
-<span class="n">viewby_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">view_by_header</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">viewby_dropdown</span><span class="p">,</span> <span class="n">view_dropdown</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">viewby_btn</span><span class="p">,</span> <span class="n">view_output</span><span class="p">])])</span>
-<span class="c1">#view_by_header</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">view</span><span class="p">(</span><span class="n">viewby_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">view_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Random
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Price</th>
-      <th>Manufactured Year</th>
-      <th>NewMil</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>70</th>
-      <td>19500.0</td>
-      <td>2007.0</td>
-      <td>22500.0</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>30000.0</td>
-      <td>2009.0</td>
-      <td>82500.0</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>65000.0</td>
-      <td>2017.0</td>
-      <td>52500.0</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>28700.0</td>
-      <td>2009.0</td>
-      <td>155000.0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>45000.0</td>
-      <td>2014.0</td>
-      <td>125000.0</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>35000.0</td>
-      <td>2010.0</td>
-      <td>125000.0</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>38500.0</td>
-      <td>2012.0</td>
-      <td>165000.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Price</th>
-      <th>Manufactured Year</th>
-      <th>NewMil</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>53</th>
-      <td>49000.0</td>
-      <td>2014.0</td>
-      <td>57500.0</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>31588.0</td>
-      <td>2010.0</td>
-      <td>155000.0</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>46500.0</td>
-      <td>2014.0</td>
-      <td>57500.0</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>17500.0</td>
-      <td>2005.0</td>
-      <td>165000.0</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>17999.0</td>
-      <td>2005.0</td>
-      <td>155000.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_pca</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Apply &lt;b&gt;Data Mining&lt;b&gt; Method!!&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_pca</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_box</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Choose to view and compare by attributes&lt;b&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_box</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">str_result</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Click to view Potential Scammers!!&lt;b&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1">#str_result</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strcol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">]</span>
-<span class="n">datacol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">datacol</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">strcol</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#r = len(df2) #all rows in d2(cleaned dataset)</span>
-<span class="c1">#c = len(x.columns) #numcols only</span>
-<span class="c1">#1.FORMING MATRIX D(RowDataAdjust)</span>
-<span class="k">def</span> <span class="nf">step1</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="n">avgs</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)):</span>
-        <span class="n">avg</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-        <span class="n">avgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span>
-    
-    <span class="n">MeanAdjustedData</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
-    
-    <span class="n">minus</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> <span class="c1">#column</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">):</span> <span class="c1">#row</span>
-            <span class="n">minus</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">avgs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
-            <span class="n">MeanAdjustedData</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">minus</span>
-            <span class="c1">#print(j, i, df1.iloc[i, j], avgs[j], minus, MeanAdjustedData[i][j])</span>
-        <span class="n">minus</span> <span class="o">=</span> <span class="mf">0.0</span>
-    
-    <span class="k">return</span> <span class="n">MeanAdjustedData</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2. FORMING COVARIANCE MATRIX</span>
-<span class="k">def</span> <span class="nf">step2</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
-    <span class="n">mymat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">mycov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mymat</span><span class="p">,</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">mycov</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3. CALCULATE EIGENVALUES, EIGENVECTORS</span>
-<span class="k">def</span> <span class="nf">step3_4</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">la</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-    
-    <span class="c1"># First column is the first eigenvector</span>
-    <span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-    
-    <span class="c1">#SORTING EIGENVALS WITH CORRESPOND EIGENVECS</span>
-    <span class="n">idx</span> <span class="o">=</span> <span class="n">eigvals</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   
-    <span class="n">eigvals</span> <span class="o">=</span> <span class="n">eigvals</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">eigvecs</span><span class="p">[:,</span><span class="n">idx</span><span class="p">]</span>
-    
-    <span class="c1">#2 COMPONENTS</span>
-    <span class="n">feature_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-    
-    <span class="c1">#copy r rows and c columns from eigvecs</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span> <span class="c1">#column</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">)):</span> <span class="c1">#row </span>
-            <span class="n">feature_vec</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">eigvecs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-            
-    <span class="k">return</span> <span class="n">feature_vec</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">step5</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span> <span class="n">matrix2</span><span class="p">):</span>
-    <span class="n">RowFeatureVecs_</span> <span class="o">=</span> <span class="n">matrix1</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">RowDataAdjust</span> <span class="o">=</span> <span class="n">matrix2</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">RowFeatureVecs_</span><span class="p">,</span> <span class="n">RowDataAdjust</span><span class="p">)</span>
-    <span class="n">FinalDataT</span> <span class="o">=</span> <span class="n">FinalData</span><span class="o">.</span><span class="n">T</span>
-    
-    <span class="k">return</span> <span class="n">FinalDataT</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">prices</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">inds</span> <span class="o">=</span><span class="p">[]</span>
-    <span class="n">years</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">mils</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
-        <span class="n">price</span> <span class="o">=</span> <span class="s2">&quot;Price: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-        <span class="n">prices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
-        <span class="n">ind</span> <span class="o">=</span> <span class="s2">&quot;ID: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-        <span class="n">inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
-        <span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;Year: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Manufactured Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1">#Private</span>
-        <span class="n">years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
-        <span class="n">mil</span> <span class="o">=</span> <span class="s2">&quot;Mileage: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NewMil&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-        <span class="n">mils</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mil</span><span class="p">)</span>
-
-    <span class="n">mytexts</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
-        <span class="n">mytext</span> <span class="o">=</span> <span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">years</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">mils</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">mytexts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mytext</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">mytexts</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
-    <span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">plot</span> 
-    <span class="kn">from</span> <span class="nn">plotly.widgets</span> <span class="k">import</span> <span class="n">GraphWidget</span>
-    <span class="n">init_notebook_mode</span><span class="p">()</span>
-    <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
-    <span class="n">mydata</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="p">]</span>
-    <span class="n">mylayout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;2 Component PCA: &#39;</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 1&#39;</span><span class="p">),</span> <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 2&#39;</span><span class="p">),</span> <span class="n">hovermode</span> <span class="o">=</span> <span class="s1">&#39;closest&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="n">fig_comp</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">mylayout</span><span class="p">)</span>
-    <span class="n">iplot</span><span class="p">(</span><span class="n">fig_comp</span><span class="p">)</span>
-    <span class="c1">#plot(fig_comp)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">myPCA</span><span class="p">():</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">()</span>
-    <span class="n">MeanAdjustedData</span> <span class="o">=</span> <span class="n">step1</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">mycov</span> <span class="o">=</span> <span class="n">step2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
-    <span class="n">feature_vec</span> <span class="o">=</span> <span class="n">step3_4</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">mycov</span><span class="p">)</span>
-    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">step5</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">,</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
-    <span class="n">mytexts</span> <span class="o">=</span> <span class="n">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    <span class="n">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#myPCA()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">pcabtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;PCA!&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
-    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
-<span class="p">)</span>
-<span class="c1">#pcabtn</span>
-<span class="c1">#bscrap = widgets.Button(description=&#39;Scrap Me&#39;)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
-<span class="n">pca_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
-      <span class="c1"># &quot;linking function with output&quot;</span>
-      <span class="k">with</span> <span class="n">pca_output</span><span class="p">:</span>
-          <span class="c1"># what happens when we press the button</span>
-          <span class="n">clear_output</span><span class="p">()</span>
-          <span class="n">myPCA</span><span class="p">()</span>
-          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
-<span class="c1"># linking button and function together using a button&#39;s method</span>
-<span class="n">pcabtn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">boxplotbtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Boxplot&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
-    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
-<span class="p">)</span>
-<span class="c1">#boxplotbtn</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">boxplot_filter</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
-    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">],</span>
-    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span>
-    <span class="n">rows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Filter by&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">scambtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Click Me&#39;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
-    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
-<span class="p">)</span>
-<span class="c1">#scambtn</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#filepath=fpath.value + &quot;\\&quot; + fname.value + &quot;.csv&quot;</span>
-<span class="c1">#filepath</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#accordion.children[0].value</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#import dataframe</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">requests</span> <span class="k">as</span> <span class="nn">req</span>
-<span class="c1">#calling package URL lib</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlopen</span> <span class="k">as</span> <span class="n">uReq</span>
-<span class="c1">#pase HTML text</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">soup</span>
-
-
-<span class="c1">#filename = &quot;df_mulpages.csv&quot;</span>
-<span class="c1">#filename = filepath</span>
-<span class="k">def</span> <span class="nf">scrapme</span><span class="p">(</span><span class="n">meurl</span><span class="p">,</span> <span class="n">filepath</span><span class="p">):</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">filepath</span>
-    <span class="k">def</span> <span class="nf">subs</span> <span class="p">(</span><span class="n">Mileage</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;0 - 4 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;0 - 4 999&quot;</span><span class="p">,</span> <span class="s2">&quot;2500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;5 000 - 9 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;5 000 - 9 999&quot;</span><span class="p">,</span> <span class="s2">&quot;52500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;10 000 - 14 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;10 000 - 14 999&quot;</span><span class="p">,</span> <span class="s2">&quot;12500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;15 000 - 19 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;15 000 - 19 999&quot;</span><span class="p">,</span> <span class="s2">&quot;17500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;20 000 - 24 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;20 000 - 24 999&quot;</span><span class="p">,</span> <span class="s2">&quot;22500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;25 000 - 29 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;25 000 - 29 999&quot;</span><span class="p">,</span> <span class="s2">&quot;27500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;30 000 - 34 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;30 000 - 34 999&quot;</span><span class="p">,</span> <span class="s2">&quot;32500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;35 000 - 39 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;35 000 - 39 999&quot;</span><span class="p">,</span> <span class="s2">&quot;37500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;40 000 - 44 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;40 000 - 44 999&quot;</span><span class="p">,</span> <span class="s2">&quot;42500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;45 000 - 49 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;45 000 - 49 999&quot;</span><span class="p">,</span> <span class="s2">&quot;47500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;50 000 - 54 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;50 000 - 54 999&quot;</span><span class="p">,</span> <span class="s2">&quot;52500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;55 000 - 59 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;55 000 - 59 999&quot;</span><span class="p">,</span> <span class="s2">&quot;57500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;60 000 - 64 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;60 000 - 64 999&quot;</span><span class="p">,</span> <span class="s2">&quot;62500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;65 000 - 69 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;65 000 - 69 999&quot;</span><span class="p">,</span> <span class="s2">&quot;67500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;70 000 - 74 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;70 000 - 74 999&quot;</span><span class="p">,</span> <span class="s2">&quot;72500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;75 000 - 79 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;75 000 - 79 999&quot;</span><span class="p">,</span> <span class="s2">&quot;77500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;80 000 - 84 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;80 000 - 84 999&quot;</span><span class="p">,</span> <span class="s2">&quot;82500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;85 000 - 89 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;85 000 - 89 999&quot;</span><span class="p">,</span> <span class="s2">&quot;87500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;90 000 - 94 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;90 000 - 94 999&quot;</span><span class="p">,</span> <span class="s2">&quot;92500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;95 000 - 99 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;95 000 - 99 999&quot;</span><span class="p">,</span> <span class="s2">&quot;97500&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;100 000 - 109 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;100 000 - 109 999&quot;</span><span class="p">,</span> <span class="s2">&quot;105000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;110 000 - 119 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;110 000 - 119 999&quot;</span><span class="p">,</span> <span class="s2">&quot;115000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;120 000 - 129 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;120 000 - 129 999&quot;</span><span class="p">,</span> <span class="s2">&quot;125000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;130 000 - 139 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;130 000 - 139 999&quot;</span><span class="p">,</span> <span class="s2">&quot;135000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;140 000 - 149 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;140 000 - 149 999&quot;</span><span class="p">,</span> <span class="s2">&quot;145000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;150 000 - 159 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;150 000 - 159 999&quot;</span><span class="p">,</span> <span class="s2">&quot;155000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;160 000 - 169 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;160 000 - 169 999&quot;</span><span class="p">,</span> <span class="s2">&quot;165000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;170 000 - 179 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;170 000 - 179 999&quot;</span><span class="p">,</span> <span class="s2">&quot;175000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;180 000 - 189 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;180 000 - 189 999&quot;</span><span class="p">,</span> <span class="s2">&quot;185000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;190 000 - 199 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;190 000 - 199 999&quot;</span><span class="p">,</span> <span class="s2">&quot;195000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;200 000 - 249 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;200 000 - 249 999&quot;</span><span class="p">,</span> <span class="s2">&quot;225000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;250 000 - 299 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;250 000 - 299 999&quot;</span><span class="p">,</span> <span class="s2">&quot;275000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;300 000 - 349 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;300 000 - 349 999&quot;</span><span class="p">,</span> <span class="s2">&quot;325000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;350 000 - 399 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;350 000 - 399 999&quot;</span><span class="p">,</span> <span class="s2">&quot;375000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;400 000 - 449 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;400 000 - 449 999&quot;</span><span class="p">,</span> <span class="s2">&quot;425000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">Mileage</span> <span class="o">==</span> <span class="s2">&quot;450 000 - 499 999&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;450 000 - 499 999&quot;</span><span class="p">,</span> <span class="s2">&quot;475000&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Mileage</span>
-
-        
-    <span class="k">def</span> <span class="nf">dprice</span> <span class="p">(</span><span class="n">a</span><span class="p">):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">a</span>
-    <span class="n">container</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">pages</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">my_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.mudah.my/kuala-lumpur/cars-for-sale/toyota/vios?o=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&amp;q=&amp;so=1&amp;f=p&amp;th=1&#39;</span>
-        <span class="n">pages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">my_url</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">pages</span><span class="p">:</span>
-        <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-        <span class="n">page_soup</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
-        <span class="n">containers</span> <span class="o">=</span> <span class="n">page_soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;listing_params_container&quot;</span><span class="p">})</span>
-
-
-        <span class="k">for</span> <span class="n">fathiah</span> <span class="ow">in</span> <span class="n">containers</span><span class="p">:</span>
-
-            <span class="n">clink</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">price</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;ads_price&quot;</span><span class="p">})</span>
-            <span class="n">Price</span> <span class="o">=</span> <span class="n">price</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">year</span> <span class="o">=</span> <span class="n">fathiah</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;icon_label&quot;</span><span class="p">})</span>
-            <span class="n">Year</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">Mileage</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">CC</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">Condition</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-            <span class="n">newMil</span> <span class="o">=</span> <span class="n">subs</span><span class="p">(</span><span class="n">Mileage</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">Price1</span> <span class="o">=</span> <span class="n">Price</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;RM&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="n">nPrice</span> <span class="o">=</span> <span class="n">dprice</span><span class="p">(</span><span class="n">Price1</span><span class="p">)</span>
-            <span class="n">container</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">nPrice</span><span class="p">,</span> <span class="n">Year</span><span class="p">,</span> <span class="n">Mileage</span><span class="p">,</span> <span class="n">newMil</span><span class="p">,</span> <span class="n">CC</span><span class="p">,</span> <span class="n">Condition</span><span class="p">,</span> <span class="n">clink</span><span class="p">))</span>
-
-
-
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">])</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-    <span class="c1">#print (df)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done scrap &quot;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
-     
+<span class="k">def</span> <span class="nf">concate_filepath</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">csvfile</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">csvfile</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span>
+    <span class="n">fullpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fullpath</span>
 </pre></div>
 
     </div>
@@ -13723,135 +12433,6 @@ div#notebook {
 
   
 
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#def scrap(car, location, page, filepath)</span>
-<span class="n">scrap</span><span class="p">(</span><span class="n">car_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">location_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pages_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">LENOVO</span><span class="se">\\</span><span class="s1">Documents</span><span class="se">\\</span><span class="s1">fyp fathiah</span><span class="se">\\</span><span class="s1">Program</span><span class="se">\\</span><span class="s1">Test1.csv&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-38-b1da1d6d0e28&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-red-intense-fg ansi-bold">#def scrap(car, location, page, filepath)</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>scrap<span class="ansi-yellow-intense-fg ansi-bold">(</span>car_dropdown<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">,</span> location_dropdown<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">,</span> pages_dropdown<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;C:\\Users\\LENOVO\\Documents\\fyp fathiah\\Program\\Test1.csv&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-37-1e3b424683b6&gt;</span> in <span class="ansi-cyan-fg">scrap</span><span class="ansi-blue-intense-fg ansi-bold">(mycar, mylocation, mypage, filepath)</span>
-<span class="ansi-green-fg">     88</span> 
-<span class="ansi-green-fg">     89</span>     <span class="ansi-red-intense-fg ansi-bold">#Parameter1: LOCATION</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 90</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>param1 <span class="ansi-yellow-intense-fg ansi-bold">=</span> location<span class="ansi-yellow-intense-fg ansi-bold">(</span>mylocation<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     91</span>     car_sale <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;cars-for-sale&#39;</span> <span class="ansi-yellow-intense-fg ansi-bold">+</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;/&#39;</span>
-<span class="ansi-green-fg">     92</span>     <span class="ansi-red-intense-fg ansi-bold">#Parameter2: TYPE OF CAR</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;location&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">car</span><span class="p">(</span><span class="n">car_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">location</span><span class="p">(</span><span class="n">location_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">car</span><span class="p">):</span>
-    <span class="n">car_param</span> <span class="o">=</span> <span class="n">car</span>
-    <span class="n">car_param</span> <span class="o">=</span> <span class="n">car_param</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;?&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">car_param</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="k">def</span> <span class="nf">location</span><span class="p">(</span><span class="n">location</span><span class="p">):</span>
-    <span class="n">location_param</span> <span class="o">=</span> <span class="n">location</span>
-    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">location_param</span><span class="p">:</span>
-        <span class="n">location_param</span> <span class="o">=</span> <span class="n">location_param</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">location_param</span> <span class="o">=</span> <span class="n">location_param</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">location_param</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
   <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
@@ -13867,7 +12448,7 @@ div#notebook {
       <span class="k">with</span> <span class="n">oscrap</span><span class="p">:</span>
           <span class="c1"># what happens when we press the button</span>
           <span class="n">clear_output</span><span class="p">()</span>
-          <span class="c1">#scrapme(meurl.value, filepath)</span>
+          <span class="n">scrap</span><span class="p">(</span><span class="n">car_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">location_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pages_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">concate_filepath</span><span class="p">(</span><span class="n">fpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fname</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
           <span class="c1">#plt.plot(X, y)</span>
           <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Me Scrapped!&#39;</span><span class="p">)</span>
 <span class="c1"># linking button and function together using a button&#39;s method</span>
@@ -13881,6 +12462,958 @@ div#notebook {
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Upload-&amp;-View-Data">Upload &amp; View Data<a class="anchor-link" href="#Upload-&amp;-View-Data">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">lpath</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Upload cleaned dataset&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Folder Path:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="c1">#lpath</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">lname</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Name of cleaned csv file&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;CSV file:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="c1">#lname</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_csvname</span> <span class="o">=</span> <span class="n">fname</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span>
+<span class="n">save_folderpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">save_csvname</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_link</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;i&gt;&lt;b&gt;https://www.mudah.my/malaysia/cars-for-sale?o=1&amp;q=&amp;th=1&lt;/b&gt;&lt;i&gt;&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample Link:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_link</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_folder</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;i&gt;&lt;b&gt;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">LENOVO</span><span class="se">\\</span><span class="s2">Documents&lt;/b&gt;&lt;i&gt;&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample Path:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_folder</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_csv</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;i&gt;&lt;b&gt;kereta&lt;/b&gt;&lt;i&gt;&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sample CSV:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_csv</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#import cleaned datafile</span>
+<span class="c1"># C:\Users\LENOVO\Documents\fyp fathiah\Program\Test Case\dataset</span>
+<span class="k">def</span> <span class="nf">import_df</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">):</span>
+    <span class="c1">#os.chdir(r&quot;C:\Users\LENOVO\Documents\fyp fathiah\Program\Test Case\dataset&quot;)</span>
+    <span class="c1">#missing_values = [&quot;n/a&quot;, &quot;na&quot;, &quot;-&quot;, &quot;0&quot;]</span>
+    <span class="c1">#filepath_or_buffer = &quot;ToyotaVios KL &amp; SELANGORNUMCOL.csv&quot;</span>
+    <span class="c1">#filepath_or_buffer = &quot;HondaAccord KL &amp; SELANGOR.csv&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">)</span><span class="c1">#, na_values = missing_values)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">concate_filepath</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_view</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Choose how to view your data&lt;/b&gt;&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_view</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">viewlist_</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">]</span>
+<span class="n">view_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">viewlist_</span><span class="p">,</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">viewlist_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Num Rows:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#view_dropdown</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">view_by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Head&#39;</span><span class="p">,</span> <span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="s1">&#39;Tail&#39;</span><span class="p">]</span>
+<span class="n">viewby_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">view_by</span><span class="p">,</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">view_by</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;By:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#viewby_dropdown</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">viewby_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="c1">#style=ButtonStyle(button_color=&#39;blue&#39;),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;View&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;info&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click Me&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="p">)</span>
+<span class="c1">#viewby_btn</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
+<span class="n">view_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+      <span class="k">with</span> <span class="n">view_output</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+          <span class="n">clear_output</span><span class="p">()</span>
+          <span class="n">view</span><span class="p">(</span><span class="n">viewby_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">view_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
+<span class="c1"># linking button and function together using a button&#39;s method</span>
+<span class="n">viewby_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">view_by_header</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">viewby_dropdown</span><span class="p">,</span> <span class="n">view_dropdown</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">viewby_btn</span><span class="p">,</span> <span class="n">view_output</span><span class="p">])])</span>
+<span class="c1">#view_by_header</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_pca</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Apply &lt;b&gt;Data Mining&lt;b&gt; Method!!&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_pca</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_box</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Choose to view and compare by attributes&lt;b&gt;&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_box</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">str_result</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Click to view Potential Scammers!!&lt;b&gt;&quot;</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#str_result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#r = len(df2) #all rows in d2(cleaned dataset)</span>
+<span class="c1">#c = len(x.columns) #numcols only</span>
+<span class="c1">#1.FORMING MATRIX D(RowDataAdjust)</span>
+<span class="k">def</span> <span class="nf">step1</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">avgs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)):</span>
+        <span class="n">avg</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">avgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span>
+    
+    <span class="n">MeanAdjustedData</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+    
+    <span class="n">minus</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> <span class="c1">#column</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">):</span> <span class="c1">#row</span>
+            <span class="n">minus</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">avgs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
+            <span class="n">MeanAdjustedData</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">minus</span>
+            <span class="c1">#print(j, i, df1.iloc[i, j], avgs[j], minus, MeanAdjustedData[i][j])</span>
+        <span class="n">minus</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+    <span class="k">return</span> <span class="n">MeanAdjustedData</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#2. FORMING COVARIANCE MATRIX</span>
+<span class="k">def</span> <span class="nf">step2</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
+    <span class="n">mymat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">mycov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mymat</span><span class="p">,</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mycov</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#3. CALCULATE EIGENVALUES, EIGENVECTORS</span>
+<span class="k">def</span> <span class="nf">step3_4</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">la</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    
+    <span class="c1"># First column is the first eigenvector</span>
+    <span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    
+    <span class="c1">#SORTING EIGENVALS WITH CORRESPOND EIGENVECS</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">eigvals</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   
+    <span class="n">eigvals</span> <span class="o">=</span> <span class="n">eigvals</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">eigvecs</span><span class="p">[:,</span><span class="n">idx</span><span class="p">]</span>
+    
+    <span class="c1">#2 COMPONENTS</span>
+    <span class="n">feature_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    
+    <span class="c1">#copy r rows and c columns from eigvecs</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span> <span class="c1">#column</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">)):</span> <span class="c1">#row </span>
+            <span class="n">feature_vec</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">eigvecs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            
+    <span class="k">return</span> <span class="n">feature_vec</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#5 FORM NEW DATA SET</span>
+<span class="k">def</span> <span class="nf">step5</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span> <span class="n">matrix2</span><span class="p">):</span>
+    <span class="n">RowFeatureVecs_</span> <span class="o">=</span> <span class="n">matrix1</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">RowDataAdjust</span> <span class="o">=</span> <span class="n">matrix2</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">RowFeatureVecs_</span><span class="p">,</span> <span class="n">RowDataAdjust</span><span class="p">)</span>
+    <span class="n">FinalDataT</span> <span class="o">=</span> <span class="n">FinalData</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="k">return</span> <span class="n">FinalDataT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">prices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">inds</span> <span class="o">=</span><span class="p">[]</span>
+    <span class="n">years</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">mils</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="s2">&quot;Price: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">prices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="s2">&quot;ID: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;Year: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Manufactured Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1">#Private</span>
+        <span class="n">years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="n">mil</span> <span class="o">=</span> <span class="s2">&quot;Mileage: &quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NewMil&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">mils</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mil</span><span class="p">)</span>
+
+    <span class="n">mytexts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+        <span class="n">mytext</span> <span class="o">=</span> <span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">years</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">mils</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">mytexts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mytext</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">mytexts</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+    <span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">plot</span> 
+    <span class="kn">from</span> <span class="nn">plotly.widgets</span> <span class="k">import</span> <span class="n">GraphWidget</span>
+    <span class="n">init_notebook_mode</span><span class="p">()</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="p">]</span>
+    <span class="n">mylayout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;2 Component PCA: &#39;</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 1&#39;</span><span class="p">),</span> <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 2&#39;</span><span class="p">),</span> <span class="n">hovermode</span> <span class="o">=</span> <span class="s1">&#39;closest&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">fig_comp</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">mylayout</span><span class="p">)</span>
+    <span class="n">iplot</span><span class="p">(</span><span class="n">fig_comp</span><span class="p">)</span>
+    <span class="c1">#plot(fig_comp)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">myPCA</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">concate_filepath</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="n">strcol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">]</span>
+    <span class="n">datacol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">datacol</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">strcol</span><span class="p">]</span>
+    <span class="n">MeanAdjustedData</span> <span class="o">=</span> <span class="n">step1</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">mycov</span> <span class="o">=</span> <span class="n">step2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
+    <span class="n">feature_vec</span> <span class="o">=</span> <span class="n">step3_4</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">mycov</span><span class="p">)</span>
+    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">step5</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">,</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
+    <span class="n">mytexts</span> <span class="o">=</span> <span class="n">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">pcabtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;PCA!&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
+<span class="p">)</span>
+<span class="c1">#pcabtn</span>
+<span class="c1">#bscrap = widgets.Button(description=&#39;Scrap Me&#39;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
+<span class="n">pca_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+      <span class="k">with</span> <span class="n">pca_output</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+          <span class="n">clear_output</span><span class="p">()</span>
+          <span class="n">myPCA</span><span class="p">()</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
+<span class="c1"># linking button and function together using a button&#39;s method</span>
+<span class="n">pcabtn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">boxplotbtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Boxplot&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
+<span class="p">)</span>
+<span class="c1">#boxplotbtn</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">boxplot_filter</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span>
+    <span class="n">rows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Filter by&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">scambtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Click Me&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
+<span class="p">)</span>
+<span class="c1">#scambtn</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Testing">Testing<a class="anchor-link" href="#Testing">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#concate_filepath(lpath.value, lname.value)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df = import_df(concate_filepath(lpath.value, lname.value))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#view(viewby_dropdown.value, int(view_dropdown.value))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df.sample(5)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#myPCA()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#filepath=fpath.value + &quot;\\&quot; + fname.value + &quot;.csv&quot;</span>
+<span class="c1">#filepath</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#accordion.children[0].value</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#def scrap(car, location, page, filepath)</span>
+<span class="c1">#scrap(car_dropdown.value, location_dropdown.value, pages_dropdown.value, &#39;C:\\Users\\LENOVO\\Documents\\fyp fathiah\\Program\\Test1.csv&#39;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#car(car_dropdown.value)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#location(location_dropdown.value)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Interface">Interface<a class="anchor-link" href="#Interface">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
