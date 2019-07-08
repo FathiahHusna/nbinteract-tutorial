@@ -12934,7 +12934,7 @@ div#notebook {
 <span class="c1">#2. FORMING COVARIANCE MATRIX</span>
 <span class="k">def</span> <span class="nf">step2</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
     <span class="n">mymat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">mycov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mymat</span><span class="p">,</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
+    <span class="n">mycov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">mymat</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">mycov</span>
 </pre></div>
 
