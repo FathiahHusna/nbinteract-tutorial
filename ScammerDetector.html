@@ -11839,6 +11839,12 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">requests</span> <span class="k">as</span> <span class="nn">req</span>
+<span class="c1">#calling package URL lib</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlopen</span> <span class="k">as</span> <span class="n">uReq</span>
+<span class="c1">#pase HTML text</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">soup</span>
 </pre></div>
 
     </div>
@@ -12450,7 +12456,7 @@ div#notebook {
           <span class="n">clear_output</span><span class="p">()</span>
           <span class="n">scrap</span><span class="p">(</span><span class="n">car_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">location_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pages_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">concate_filepath</span><span class="p">(</span><span class="n">fpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fname</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
           <span class="c1">#plt.plot(X, y)</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Me Scrapped!&#39;</span><span class="p">)</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
 <span class="c1"># linking button and function together using a button&#39;s method</span>
 <span class="n">bscrap</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
 <span class="c1"># displaying button and its output together</span>
