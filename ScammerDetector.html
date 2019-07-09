@@ -11839,6 +11839,13 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">plot</span> 
+<span class="kn">from</span> <span class="nn">plotly.widgets</span> <span class="k">import</span> <span class="n">GraphWidget</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">KMeans</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
     </div>
@@ -12447,7 +12454,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
 
-<span class="n">bscrap</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Srap &amp; Save&#39;</span><span class="p">)</span>
+<span class="n">bscrap</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Srap &amp; Save&#39;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;info&#39;</span><span class="p">)</span>
 <span class="n">oscrap</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
       <span class="c1"># &quot;linking function with output&quot;</span>
@@ -12630,78 +12637,6 @@ div#notebook {
 </pre></div>
 
     </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;C:\\Users\\LENOVO\\Documents\\fyp fathiah\\Program\\Test Case\\dataset&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lname</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;HondaAccord KL &amp; SELANGOR.csv&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13128,9 +13063,6 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
 <span class="k">def</span> <span class="nf">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
-    <span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">plot</span> 
-    <span class="kn">from</span> <span class="nn">plotly.widgets</span> <span class="k">import</span> <span class="n">GraphWidget</span>
     <span class="n">init_notebook_mode</span><span class="p">()</span>
     <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">FinalData</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
     <span class="n">mydata</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="p">]</span>
@@ -13165,6 +13097,27 @@ div#notebook {
     <span class="n">mycov</span> <span class="o">=</span> <span class="n">step2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
     <span class="n">feature_vec</span> <span class="o">=</span> <span class="n">step3_4</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">mycov</span><span class="p">)</span>
     <span class="n">FinalData</span> <span class="o">=</span> <span class="n">step5</span><span class="p">(</span><span class="n">feature_vec</span><span class="p">,</span> <span class="n">MeanAdjustedData</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">FinalData</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">myPCA_plot</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">myPCA</span><span class="p">()</span>
     <span class="n">mytexts</span> <span class="o">=</span> <span class="n">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
     <span class="n">pca_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span><span class="p">)</span>
 </pre></div>
@@ -13184,11 +13137,179 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">test_k</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">myPCA</span><span class="p">()</span>
+    <span class="n">Sum_of_squared_distances</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">K</span><span class="p">:</span>
+        <span class="n">km</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">km</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">FinalData</span><span class="p">)</span>
+        <span class="n">Sum_of_squared_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">km</span><span class="o">.</span><span class="n">inertia_</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">Sum_of_squared_distances</span><span class="p">,</span> <span class="s1">&#39;bx-&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sum_of_squared_distances&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Elbow Method For Optimal k: &#39;</span> <span class="o">+</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">myClustering_k</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+    <span class="n">mytexts</span> <span class="o">=</span> <span class="n">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">FinalData</span> <span class="o">=</span> <span class="n">myPCA</span><span class="p">()</span>
+    <span class="n">kmean</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">kmean</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">FinalData</span><span class="p">)</span>
+    <span class="n">ReducedCentroid</span> <span class="o">=</span> <span class="n">kmean</span><span class="o">.</span><span class="n">cluster_centers_</span>   
+    <span class="n">ReducedLabels</span> <span class="o">=</span> <span class="n">kmean</span><span class="o">.</span><span class="n">labels_</span>
+    <span class="k">return</span> <span class="n">ReducedCentroid</span><span class="p">,</span> <span class="n">ReducedLabels</span><span class="p">,</span> <span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">myClustering_All</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+    <span class="n">strcol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">]</span>
+    <span class="n">datacol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">datacol</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">strcol</span><span class="p">]</span>
+    <span class="n">kmeanAll</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">kmeanAll</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">AllCentroid</span> <span class="o">=</span> <span class="n">kmeanAll</span><span class="o">.</span><span class="n">cluster_centers_</span>
+    <span class="k">return</span> <span class="n">AllCentroid</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">clustering_plot</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">centroid</span><span class="p">,</span> <span class="n">myktexts</span><span class="p">,</span> <span class="n">NewCents</span><span class="p">,</span> <span class="n">ReducedLabels</span><span class="p">):</span>
+    <span class="n">init_notebook_mode</span><span class="p">()</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">matrix</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">matrix</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Points&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">ReducedLabels</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span> <span class="n">myktexts</span><span class="p">)</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">centroid</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">centroid</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Centroids&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;x-dot&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span> <span class="n">NewCents</span><span class="p">)</span>
+    <span class="n">mydata</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="p">,</span> <span class="n">center</span><span class="p">]</span>
+    <span class="n">mylayout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;2 Component PCA&#39;</span> <span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 1&#39;</span><span class="p">),</span> <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;component 2&#39;</span><span class="p">),</span> <span class="n">hovermode</span> <span class="o">=</span> <span class="s1">&#39;closest&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">fig_comp</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">mylayout</span><span class="p">)</span>
+    <span class="n">iplot</span><span class="p">(</span><span class="n">fig_comp</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">myClustering_KMeans</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">AllCentroid</span> <span class="o">=</span> <span class="n">myClustering_All</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">ReducedCentroid</span><span class="p">,</span> <span class="n">ReducedLabels</span><span class="p">,</span> <span class="n">FinalData</span><span class="p">,</span> <span class="n">mytexts</span> <span class="o">=</span> <span class="n">myClustering_k</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    
+    <span class="n">AllCentsPrice</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">AllCentsYr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">AllCentsMil</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AllCentroid</span><span class="p">)):</span>
+        <span class="n">AllPrice</span> <span class="o">=</span> <span class="s1">&#39;Price: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">AllCentroid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">AllCentsPrice</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AllPrice</span><span class="p">)</span>
+        <span class="n">AllYr</span> <span class="o">=</span> <span class="s1">&#39;Year: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">AllCentroid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">AllCentsYr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AllYr</span><span class="p">)</span>
+        <span class="n">AllMil</span> <span class="o">=</span> <span class="s1">&#39;Mileage: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">AllCentroid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">AllCentsMil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AllMil</span><span class="p">)</span>
+    
+    <span class="n">AllCents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AllCentsPrice</span><span class="p">)):</span>
+        <span class="n">AllCent</span> <span class="o">=</span> <span class="n">AllCentsPrice</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">AllCentsYr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">AllCentsMil</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">AllCents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AllCent</span><span class="p">)</span>
+    
+    <span class="n">cents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ReducedCentroid</span><span class="p">)):</span>
+        <span class="n">cent</span> <span class="o">=</span> <span class="s2">&quot;Centroid: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">cents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cent</span><span class="p">)</span>
+    
+    <span class="n">NewCents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ReducedCentroid</span><span class="p">)):</span>
+        <span class="n">NewCent</span> <span class="o">=</span> <span class="n">cents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">AllCents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">NewCents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NewCent</span><span class="p">)</span>
+        
+    <span class="n">ktexts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ReducedLabels</span><span class="p">)):</span>
+        <span class="n">ktext</span> <span class="o">=</span> <span class="s2">&quot;Cluster: &quot;</span> <span class="o">+</span> <span class="n">ReducedLabels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">ktexts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ktext</span><span class="p">)</span>
+        
+    <span class="n">myktexts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">FinalData</span><span class="p">)):</span>
+        <span class="n">myktext</span> <span class="o">=</span> <span class="n">ktexts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">mytexts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">myktexts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">myktext</span><span class="p">)</span>
+    
+    <span class="n">clustering_plot</span><span class="p">(</span><span class="n">FinalData</span><span class="p">,</span> <span class="n">ReducedCentroid</span><span class="p">,</span> <span class="n">myktexts</span><span class="p">,</span> <span class="n">NewCents</span><span class="p">,</span> <span class="n">ReducedLabels</span><span class="p">)</span>
+    <span class="c1">#return NewCents, ktexts</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
 <span class="n">pcabtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span>
+    <span class="c1">#style=ButtonStyle(button_color=&#39;orange&#39;),</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;PCA!&#39;</span><span class="p">,</span>
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
     <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
     <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
 <span class="p">)</span>
@@ -13218,7 +13339,7 @@ div#notebook {
       <span class="k">with</span> <span class="n">pca_output</span><span class="p">:</span>
           <span class="c1"># what happens when we press the button</span>
           <span class="n">clear_output</span><span class="p">()</span>
-          <span class="n">myPCA</span><span class="p">()</span>
+          <span class="n">myPCA_plot</span><span class="p">()</span>
           <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
 <span class="c1"># linking button and function together using a button&#39;s method</span>
 <span class="n">pcabtn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
@@ -13239,15 +13360,206 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">boxplotbtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span>
+<span class="n">check_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="c1">#style=ButtonStyle(button_color=&#39;orange&#39;),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Elbow Method&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="c1"># &#39;primary&#39;, &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
+<span class="n">check_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+      <span class="k">with</span> <span class="n">check_output</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+          <span class="n">clear_output</span><span class="p">()</span>
+          <span class="n">test_k</span><span class="p">()</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
+<span class="c1"># linking button and function together using a button&#39;s method</span>
+<span class="n">check_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">cluster_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;13&#39;</span><span class="p">,</span> <span class="s1">&#39;14&#39;</span><span class="p">]</span>
+<span class="n">cluster_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">cluster_list</span><span class="p">,</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">cluster_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Clusters:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1">#cluster_dropdown</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">cluster_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="c1">#style=ButtonStyle(button_color=&#39;orange&#39;),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Clustering&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="c1"># &#39;primary&#39;, &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
+<span class="n">cluster_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+      <span class="k">with</span> <span class="n">cluster_output</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+          <span class="n">clear_output</span><span class="p">()</span>
+          <span class="n">myClustering_KMeans</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">cluster_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
+<span class="c1"># linking button and function together using a button&#39;s method</span>
+<span class="n">cluster_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">myBoxplot</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+    <span class="n">mytexts</span> <span class="o">=</span> <span class="n">data_label</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">strcol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Mileage&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">]</span>
+    <span class="n">datacol</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Manufactured Year&#39;</span><span class="p">,</span> <span class="s1">&#39;NewMil&#39;</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">datacol</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">strcol</span><span class="p">]</span>
+    <span class="n">btrace0</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="n">boxpoints</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">pointpos</span><span class="o">=-</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
+    <span class="n">btrace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="n">boxpoints</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">pointpos</span><span class="o">=-</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
+    <span class="n">btrace2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span> <span class="n">boxpoints</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">pointpos</span><span class="o">=-</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span> <span class="n">mytexts</span><span class="p">)</span>
+
+    <span class="n">bdata</span><span class="o">=</span><span class="p">[</span><span class="n">btrace0</span><span class="p">,</span> <span class="n">btrace1</span><span class="p">,</span> <span class="n">btrace2</span><span class="p">]</span>
+    <span class="n">blayout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Boxplot&#39;</span><span class="p">,</span> <span class="n">hovermode</span> <span class="o">=</span> <span class="s1">&#39;closest&#39;</span><span class="p">)</span>
+    <span class="n">fig_comp</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">bdata</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">blayout</span><span class="p">)</span>
+    <span class="n">iplot</span><span class="p">(</span><span class="n">fig_comp</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="n">boxplot_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="c1">#style=ButtonStyle(button_color=&#39;orange&#39;),</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Boxplot&#39;</span><span class="p">,</span>
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
     <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
     <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
 <span class="p">)</span>
 <span class="c1">#boxplotbtn</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#bscrap = widgets.Button(style=ButtonStyle(button_color=&#39;orange&#39;), description=&#39;Srap &amp; Save&#39;)</span>
+<span class="n">boxplot_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+      <span class="c1"># &quot;linking function with output&quot;</span>
+      <span class="k">with</span> <span class="n">cluster_output</span><span class="p">:</span>
+          <span class="c1"># what happens when we press the button</span>
+          <span class="n">clear_output</span><span class="p">()</span>
+          <span class="n">myBoxplot</span><span class="p">()</span>
+          <span class="c1">#print(&#39;Me Scrapped!&#39;)</span>
+<span class="c1"># linking button and function together using a button&#39;s method</span>
+<span class="n">boxplot_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13290,10 +13602,10 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
 <span class="n">scambtn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
-    <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="p">(</span><span class="n">button_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+    <span class="c1">#style=ButtonStyle(button_color=&#39;red&#39;),</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Click Me&#39;</span><span class="p">,</span>
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;danger&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
     <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span>
     <span class="n">icon</span><span class="o">=</span><span class="s1">&#39;check&#39;</span>
 <span class="p">)</span>
@@ -13311,180 +13623,6 @@ div#notebook {
 </div>
 </div>
 </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#concate_filepath(lpath.value, lname.value)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df = import_df(concate_filepath(lpath.value, lname.value))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#view(viewby_dropdown.value, int(view_dropdown.value))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df.sample(5)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#myPCA()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#filepath=fpath.value + &quot;\\&quot; + fname.value + &quot;.csv&quot;</span>
-<span class="c1">#filepath</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="c1">#accordion.children[0].value</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#def scrap(car, location, page, filepath)</span>
-<span class="c1">#scrap(car_dropdown.value, location_dropdown.value, pages_dropdown.value, &#39;C:\\Users\\LENOVO\\Documents\\fyp fathiah\\Program\\Test1.csv&#39;)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#car(car_dropdown.value)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#location(location_dropdown.value)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Interface">Interface<a class="anchor-link" href="#Interface">&#182;</a></h3>
@@ -13693,7 +13831,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">accordion3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Accordion</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_pca</span><span class="p">,</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">pca_output</span><span class="p">,</span> <span class="n">pcabtn</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_box</span><span class="p">,</span> <span class="n">analysisbtn</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_result</span><span class="p">,</span> <span class="n">scambtn</span><span class="p">])])</span>
+<span class="n">accordion3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Accordion</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_pca</span><span class="p">,</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">pca_output</span><span class="p">,</span> <span class="n">pcabtn</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">check_btn</span><span class="p">,</span> <span class="n">check_output</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">cluster_dropdown</span><span class="p">,</span> <span class="n">cluster_btn</span><span class="p">,</span> <span class="n">cluster_output</span><span class="p">]),</span> <span class="n">str_box</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">boxplot_btn</span><span class="p">,</span> <span class="n">boxplot_output</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_result</span><span class="p">,</span> <span class="n">scambtn</span><span class="p">])])</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Method&#39;</span><span class="p">)</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Analysis&#39;</span><span class="p">)</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Result&#39;</span><span class="p">)</span>
