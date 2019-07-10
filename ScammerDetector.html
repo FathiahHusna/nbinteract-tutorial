@@ -11870,10 +11870,10 @@ div#notebook {
 
 
 
-<div id="89799fe4-829f-44a7-8305-61501050d1af"></div>
+<div id="d8472781-eca0-488b-b1c6-b961a5f6d4f5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#89799fe4-829f-44a7-8305-61501050d1af');
+var element = $('#d8472781-eca0-488b-b1c6-b961a5f6d4f5');
 window.genUID = function() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -13779,13 +13779,34 @@ define('graphWidget', ["@jupyter-widgets/base"], function (widget) {
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">search_id</span><span class="p">(</span><span class="n">ads</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">max_id</span> <span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">n</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="k">def</span> <span class="nf">search_id</span><span class="p">(</span><span class="n">ads</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">ads</span><span class="p">])</span>
 </pre></div>
@@ -13805,11 +13826,11 @@ define('graphWidget', ["@jupyter-widgets/base"], function (widget) {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">import_df</span><span class="p">(</span><span class="n">lpath</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lname</span><span class="o">.</span><span class="n">value</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">))</span>
+
 <span class="n">search_text</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">BoundedIntText</span><span class="p">(</span>
     <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="nb">max</span><span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span> <span class="n">max_id</span><span class="p">(),</span>
     <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;View Ads ID:&#39;</span><span class="p">,</span>
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
@@ -14090,11 +14111,11 @@ define('graphWidget', ["@jupyter-widgets/base"], function (widget) {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
-<span class="n">accordion3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Accordion</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_pca</span><span class="p">,</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">pca_output</span><span class="p">,</span> <span class="n">pcabtn</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">check_btn</span><span class="p">,</span> <span class="n">check_output</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">cluster_dropdown</span><span class="p">,</span> <span class="n">cluster_btn</span><span class="p">,</span> <span class="n">cluster_output</span><span class="p">]),</span> <span class="n">str_box</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">boxplot_btn</span><span class="p">,</span> <span class="n">boxplot_output</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_result</span><span class="p">,</span> <span class="n">search_text</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">scambtn</span><span class="p">,</span> <span class="n">search_output</span><span class="p">])])])</span>
+<span class="n">accordion3</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Accordion</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">str_pca</span><span class="p">,</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">pca_output</span><span class="p">,</span> <span class="n">pcabtn</span><span class="p">])]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">check_btn</span><span class="p">,</span> <span class="n">check_output</span><span class="p">]),</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">cluster_dropdown</span><span class="p">,</span> <span class="n">cluster_btn</span><span class="p">,</span> <span class="n">cluster_output</span><span class="p">]),</span> <span class="n">str_box</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">boxplot_btn</span><span class="p">,</span> <span class="n">boxplot_output</span><span class="p">])])])</span><span class="c1">#, widgets.VBox([str_result, search_text, widgets.VBox([scambtn, search_output])])])</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Method&#39;</span><span class="p">)</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Analysis&#39;</span><span class="p">)</span>
 <span class="n">accordion3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Result&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accordion&#39;</span><span class="p">)</span>
+<span class="c1">#print(&#39;accordion&#39;)</span>
 <span class="n">accordion3</span>
 </pre></div>
 
@@ -14105,16 +14126,6 @@ define('graphWidget', ["@jupyter-widgets/base"], function (widget) {
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>accordion
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
