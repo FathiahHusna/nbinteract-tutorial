@@ -11870,10 +11870,10 @@ div#notebook {
 
 
 
-<div id="15073da1-6f38-4852-9cb8-c9005236be32"></div>
+<div id="bdbe2b0b-769c-41af-8dda-260bd777fed1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#15073da1-6f38-4852-9cb8-c9005236be32');
+var element = $('#bdbe2b0b-769c-41af-8dda-260bd777fed1');
 window.genUID = function() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -12567,10 +12567,12 @@ define('graphWidget', ["@jupyter-widgets/base"], function (widget) {
     
     <span class="n">test_link</span> <span class="o">=</span> <span class="n">front_link</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="n">end_link</span>
     
-    <span class="n">uClient</span> <span class="o">=</span> <span class="n">uReq</span><span class="p">(</span><span class="n">test_link</span><span class="p">)</span>
-    <span class="n">page_html</span> <span class="o">=</span> <span class="n">uClient</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">uClient</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">num_page_soup</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">page_html</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="c1">#uClient = uReq(test_link)</span>
+    <span class="c1">#page_html = uClient.read()</span>
+    <span class="c1">#uClient.close()</span>
+    <span class="c1">#num_page_soup = soup(page_html, &quot;html.parser&quot;)</span>
+    <span class="n">page_html</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test_link</span><span class="p">)</span>
+    <span class="n">num_page_soup</span> <span class="o">=</span> <span class="n">soup</span><span class="p">(</span><span class="n">page_html</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
     <span class="n">num_containers</span> <span class="o">=</span> <span class="n">num_page_soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;listing_title&quot;</span><span class="p">})</span>
     <span class="n">str_pg</span> <span class="o">=</span> <span class="n">num_containers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">h1</span><span class="o">.</span><span class="n">text</span>
     <span class="n">split_str_pg</span> <span class="o">=</span> <span class="n">str_pg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
